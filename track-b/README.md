@@ -23,7 +23,7 @@ materials — bring-your-own project is encouraged, the sample is the floor.
 
 | Pod | Challenge | Sample included | Morning topic |
 |---|---|---|---|
-| 1 | [The lab protocol book](pod-1-teach-the-agent-your-lab.md) | Real DESeq2 tables in `track-a/data/` + a two-act script (lab skill, then personal layer) | Skills & CLAUDE.md |
+| 1 | [Teach the agent your lab](pod-1-teach-the-agent-your-lab.md) | Real H3K27ac peak table + a ready-made lab `CLAUDE.md` (mm10, ±5 kb promoters) | Skills & CLAUDE.md |
 | 2 | [Connect to the outside world](pod-2-mcp-connections.md) | Keyless REST endpoints (Ensembl, NCBI E-utilities) + a benchmark query | MCP |
 | 3 | [Reproduce a published figure](pod-3-reproduce-a-figure.md) | Pre-vetted target: Calderon et al. 2019, GEO GSE118189 processed counts | Agents on real analysis |
 | 4 | [Automate something recurring](pod-4-automation.md) | `track-a/data/make_qc_report.py` + a preprint-scan spec | Sub-agents & automation |
