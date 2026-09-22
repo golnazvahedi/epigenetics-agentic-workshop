@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic AI Afternoon</title>
+<meta name="description" content="Hands-on afternoon plan for the Penn Epigenetics Institute agentic AI workshop with Sean Davis.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f6f7f6;
+  --surface:#ffffff;
+  --ink:#1e2a2b;
+  --muted:#5b6a6b;
+  --line:#dde3e2;
+  --track-a:#0e7c74;
+  --track-a-soft:#e3f1ef;
+  --track-b:#5b4fb5;
+  --track-b-soft:#ebe8f7;
+  --amber:#9a6b1f;
+  --amber-soft:#f6eedd;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,monospace;
+}
+:root:not([data-theme="light"]){
+  @media (prefers-color-scheme: dark){
+    --bg:#141a1a; --surface:#1d2424; --ink:#e8ecec; --muted:#9fb0b0;
+    --line:#323c3c; --track-a:#4cc2b8; --track-a-soft:#173432;
+    --track-b:#a49bf0; --track-b-soft:#28244a; --amber:#d9a84e; --amber-soft:#37301e;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141a1a; --surface:#1d2424; --ink:#e8ecec; --muted:#9fb0b0;
+  --line:#323c3c; --track-a:#4cc2b8; --track-a-soft:#173432;
+  --track-b:#a49bf0; --track-b-soft:#28244a; --amber:#d9a84e; --amber-soft:#37301e;
+}
+body{
+  background:var(--bg); color:var(--ink);
+  font:16px/1.6 'IBM Plex Sans',system-ui,sans-serif;
+  padding-inline:20px; margin:0;
+}
+a{color:inherit; text-decoration-color:var(--muted);}
+.wrap{max-width:780px; margin:0 auto; padding-block:48px 72px;}
+h1,h2,h3{font-family:'IBM Plex Serif',Georgia,serif; text-wrap:balance; line-height:1.2;}
+h1{font-size:2.1rem; margin:0 0 10px;}
+h2{font-size:1.45rem; margin:0;}
+h3{font-size:1.05rem; margin:28px 0 8px;}
+p{margin:0 0 14px; max-width:66ch;}
+.eyebrow{font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:14px;}
+.lede{font-size:1.05rem; color:var(--muted); max-width:62ch;}
+.meta{display:flex; flex-wrap:wrap; gap:10px 28px; margin:26px 0 0; padding:18px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+.meta div{min-width:150px;}
+.meta dt{font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin:0;}
+.meta dd{margin:2px 0 0; font-weight:500; font-size:.92rem;}
+section{margin-top:56px;}
+.trackhead{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; padding-bottom:12px; border-bottom:3px solid var(--tc,var(--line)); margin-bottom:6px;}
+.pill{font-family:var(--mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; padding:3px 10px; border-radius:99px; background:var(--tcs,var(--line)); color:var(--tc,var(--ink)); font-weight:500; white-space:nowrap;}
+.track-a{--tc:var(--track-a); --tcs:var(--track-a-soft);}
+.track-b{--tc:var(--track-b); --tcs:var(--track-b-soft);}
+.goal{background:var(--tcs,var(--surface)); border-radius:8px; padding:14px 18px; margin:18px 0 8px; font-size:.95rem;}
+.goal strong{color:var(--tc,var(--ink));}
+.flow{list-style:none; margin:18px 0 0; padding:0; counter-reset:step;}
+.flow li{display:grid; grid-template-columns:44px 1fr; gap:16px; padding:14px 0; border-top:1px solid var(--line); counter-increment:step;}
+.flow li::before{content:counter(step); font-family:var(--mono); font-size:.9rem; color:var(--tc,var(--muted)); font-weight:500; border:1px solid var(--tc,var(--line)); border-radius:99px; width:28px; height:28px; display:flex; align-items:center; justify-content:center; margin-top:2px;}
+.flow b{display:block; margin-bottom:2px;}
+.flow p{margin:6px 0 0; font-size:.93rem; color:var(--muted);}
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin:14px 0 6px;}
+.card{background:var(--surface); border:1px solid var(--line); border-top:3px solid var(--tc,var(--line)); border-radius:6px; padding:14px 16px;}
+.card b{font-size:.95rem;}
+.card p{font-size:.88rem; color:var(--muted); margin:6px 0 0;}
+.card .tag{font-family:var(--mono); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--tc,var(--muted)); display:block; margin-bottom:6px;}
+.card .sample{display:block; margin-top:8px; font-size:.78rem; font-family:var(--mono); color:var(--tc,var(--muted));}
+blockquote{margin:14px 0; padding:12px 18px; border-left:3px solid var(--tc,var(--line)); background:var(--surface); border-radius:0 6px 6px 0; font-size:.95rem;}
+ul.plain{padding-left:20px; margin:8px 0 14px;}
+ul.plain li{margin-bottom:8px; font-size:.95rem;}
+ul.plain li::marker{color:var(--muted);}
+.note{background:var(--amber-soft); border-left:3px solid var(--amber); border-radius:0 6px 6px 0; padding:12px 18px; margin:18px 0; font-size:.93rem;}
+.note b{color:var(--amber);}
+.repo{background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:14px 18px; margin:18px 0; font-size:.95rem;}
+.repo code{font-family:var(--mono); font-size:.85rem;}
+footer{margin-top:64px; padding-top:16px; border-top:1px solid var(--line); font-size:.82rem; color:var(--muted); font-family:var(--mono);}
+@media (max-width:520px){
+  .flow li{grid-template-columns:1fr; gap:6px;}
+  h1{font-size:1.7rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<div class="eyebrow">Penn Epigenetics Institute · Hands-on Afternoon</div>
+<h1>Agentic AI Workshop — Afternoon Plans</h1>
+<p class="lede">Two parallel hands-on tracks following Sean Davis's morning lectures (intro to agents; skills, MCP, and sub-agents). Attendees self-select at lunch with one question: <em>"Have you ever let an AI agent run code or edit files for you?"</em> No fixed clock — each track flows at the room's pace, with a joint break midway.</p>
+
+<dl class="meta">
+  <div><dt>Instructor</dt><dd>Sean Davis + 3–4 Vahedi lab TAs</dd></div>
+  <div><dt>Audience</dt><dd>Epigenetics Institute faculty &amp; trainees</dd></div>
+  <div><dt>Format</dt><dd>Two tracks, self-paced, joint break</dd></div>
+</dl>
+
+<div class="repo"><b>Materials repo (live, public):</b> <a href="https://github.com/golnazvahedi/epigenetics-agentic-workshop">github.com/golnazvahedi/epigenetics-agentic-workshop</a><br>
+Every exercise and challenge ships with its own sample — two <b>real Vahedi lab bulk datasets</b> shared for teaching (workshop use only, per <code>track-a/data/README.md</code>), a simulated sample sheet, a bundled open-access paper, and a verified public data target — so nobody needs their own data. Attendees just <code>git clone</code>.</div>
+
+<section>
+<h2>Before the workshop (both tracks)</h2>
+<p>The single biggest predictor of whether the afternoon works. Email one week ahead, remind two days ahead:</p>
+<ul class="plain">
+  <li><b>Get a coding agent working before you arrive</b> — mirrors Sean's Harvard prerequisite. Recommended: Claude Code (desktop app is the gentlest on-ramp). Fallbacks: Gemini CLI, Copilot agent mode, Codex. Attendees confirm they can open the tool and get a response.</li>
+  <li><b>Laptop + charger, working terminal.</b> Track B: also git, and ideally one of their own projects cloned.</li>
+  <li><b>Setup clinic during lunch</b> — two TAs run a help desk for failed installs.</li>
+  <li><b>TA prep (one afternoon):</b> test every exercise in the repo end to end once.</li>
+</ul>
+<div class="note"><b>Privacy ground rule, stated up front:</b> no PHI, no personal unpublished data, no grant drafts anyone isn't comfortable sending to a model API. Every exercise has staged materials — including two real Vahedi lab datasets shared for teaching (workshop use only, don't redistribute) — so nobody needs their own data.</div>
+
+<h3>What's staged in the repo</h3>
+<ul class="plain">
+  <li><b>Real DESeq2 H3K27ac ChIP-seq peak table</b> (TCF-1 knockout vs empty-vector control, DN3 thymocytes; 49,781 union peaks) — the guided exercise. Its <b>real pipeline quirks</b> are the teaching material: chromosome names without a <code>chr</code> prefix, p-values of exactly 0 (what does −log10 do?), a 93-kb "peak", no gene annotation, and nothing stating which way the fold change points.</li>
+  <li><b>Real B-cell RNA-seq</b> (CTCF-binding-site knockout vs wild type, mouse spleen): raw counts matrix + the lab's own DESeq2 table, with a genuine trap — a <em>negative</em> fold change means higher in the knockout, and <code>padj</code> is NA for most genes (independent filtering).</li>
+  <li>A deliberately messy simulated sample sheet (Card 2).</li>
+  <li>The open-access <b>scBaseCount</b> paper (Youngblut et al., <em>Cell</em> 2026, CC BY) for the paper-wrangling card — fitting, since the resource it describes was itself built by an AI agent.</li>
+  <li>A QC script with <b>four planted bugs</b> (one crash, three silent logic errors) — verified to fail on cue.</li>
+  <li>A pre-vetted figure-reproduction target: Calderon et al., <em>Nat Genet</em> 2019, GEO GSE118189, with a verified 111&nbsp;MB processed counts file (no raw FASTQs needed).</li>
+  <li>A <code>community/</code> folder where attendees PR their best prompts and CLAUDE.md files afterward.</li>
+</ul>
+</section>
+
+<section class="track-a">
+<div class="trackhead"><span class="pill">Track A</span><h2>"Getting Started" — new to agentic AI</h2></div>
+<div class="goal"><strong>Goal:</strong> every attendee personally directs an agent through real tasks — a paper, a messy table, a plot, a draft, broken code — and leaves with the verify-before-trust habit.</div>
+<p><b>Staffing:</b> 2 TAs embedded and roving — ratio matters more here than in Track B. Two parts, no clock:</p>
+
+<ul class="flow">
+  <li><div><b>Guided exercise — whole room together, projected.</b><p>After a quick launch check (one throwaway prompt each; stragglers pair with a neighbor — pairing is a feature), a TA drives on screen while everyone follows:</p>
+  <blockquote>"Explore the differential peaks file, tell me what's in it, flag anything suspicious, then make a volcano plot and a ranked table of the top 20 differential peaks by adjusted p-value."</blockquote>
+  <p>Three teaching beats: (1) you describe the <em>goal</em>, not the steps; (2) watch the plan–act–check loop — the "aha" moment; (3) interrogate the output — this is a real DESeq2 table with real quirks (p-values of exactly 0, a 93-kb peak, no stated fold-change direction), so <em>"how do I know this plot is right?"</em> has a real answer. Bonus question for the room: <em>"which group has more signal when log2FC is positive?"</em> — the agent can't know from the file alone, and that's the point.</p></div></li>
+  <li><div><b>Exercise cards — self-paced, any order.</b><p>TAs rove. Each card: one task, one bundled sample, one "success looks like" line, one stretch goal. Once someone has done a few, TAs nudge them to try the pattern on one real, <em>safe</em> task from their own work — scoped small.</p></div></li>
+</ul>
+
+<h3>The five exercise cards</h3>
+<div class="cards">
+  <div class="card"><span class="tag">Card 1</span><b>Paper wrangler</b><p>Audience-specific summary + structured extraction, then spot-check for invented details.</p><span class="sample">sample: scBaseCount PDF (Cell 2026, CC BY, bundled)</span></div>
+  <div class="card"><span class="tag">Card 2</span><b>Sample-sheet rescue</b><p>"Make this tidy, tell me what you changed." Everyday drudgery is the killer app; builds the change-log habit.</p><span class="sample">sample: messy sample sheet (simulated)</span></div>
+  <div class="card"><span class="tag">Card 3</span><b>Plot without coding</b><p>PCA and heatmap by conversation on real B-cell RNA-seq; stretch goal compares against the lab's own DESeq2 table and its fold-change-direction trap.</p><span class="sample">sample: real counts matrix + DESeq2 table</span></div>
+  <div class="card"><span class="tag">Card 4</span><b>Writing assistant</b><p>Methods paragraph with [PLACEHOLDER] discipline; figure legend from bullets. The file doesn't state the reference group — a truthful draft must leave it blank.</p><span class="sample">sample: real H3K27ac peaks table + provided bullets</span></div>
+  <div class="card"><span class="tag">Card 5</span><b>Debug my script</b><p>One crash + three silent bugs, all to be found, explained, and sanity-checked.</p><span class="sample">sample: broken QC script</span></div>
+</div>
+<p style="margin-top:14px">Close with a short share-out — volunteers show one thing that worked or failed instructively — and the take-home habits: start small; give files, not descriptions of files; always ask for verification; never paste what you can't afford to leak; the agent is a tireless junior colleague, not an oracle.</p>
+</section>
+
+<section class="track-b">
+<div class="trackhead"><span class="pill">Track B</span><h2>"Level Up" — some experience</h2></div>
+<div class="goal"><strong>Goal:</strong> every attendee leaves with a working artifact using at least one truly <em>agentic</em> capability from the morning — a CLAUDE.md/skill, an MCP connection, a sub-agent pattern, or an end-to-end reproduction — not just more chatting.</div>
+<p><b>Staffing:</b> 1–2 TAs; Sean floats here (this room asks the harder questions). Pods and demos, no clock:</p>
+
+<ul class="flow">
+  <li><div><b>Pick a challenge, form pods of 3–5.</b><p>Four stations posted on the wall; TAs cap pod sizes. Each pod writes one sentence before starting: "By the demo, we will show ___."</p></div></li>
+  <li><div><b>Build.</b><p>TAs rotate. At some point a TA interrupts the room for two minutes to show a power move worth stealing (plan mode before a big change; spawning parallel sub-agents). House rule: <em>a small thing that runs beats a big thing that almost runs.</em></p></div></li>
+  <li><div><b>Demos.</b><p>Each pod: what they built, one thing the agent nailed, one thing it got confidently wrong. Sean closes with where this is heading.</p></div></li>
+</ul>
+
+<h3>The four challenges (each with a ready sample; BYO project encouraged)</h3>
+<div class="cards">
+  <div class="card"><span class="tag">Pod 1 · Skills &amp; CLAUDE.md</span><b>Teach the agent your lab</b><p>Build the context layer for a real repo (CLAUDE.md + one reusable skill) and measure the with-vs-without difference on the same task. One person's setup becomes the whole lab's leverage.</p><span class="sample">sample: the workshop repo itself</span></div>
+  <div class="card"><span class="tag">Pod 2 · MCP</span><b>Connect to the outside world</b><p>Use an existing PubMed/GEO/UCSC MCP server, or have the agent write a minimal one around a keyless REST API (Ensembl, NCBI E-utilities, ENCODE). Benchmark: "tabulate human Treg ATAC-seq datasets on GEO since 2024," hand-checked.</p><span class="sample">sample: keyless endpoints + benchmark query</span></div>
+  <div class="card"><span class="tag">Pod 3 · Real analysis</span><b>Reproduce a published figure</b><p>Pre-vetted target: Calderon et al. 2019 (open access), GEO GSE118189 — reproduce the sample-level clustering of 175 immune ATAC samples from the processed counts alone. Sub-agents fit naturally.</p><span class="sample">sample: verified 111 MB counts file</span></div>
+  <div class="card"><span class="tag">Pod 4 · Automation</span><b>Automate something recurring</b><p>Agent-written sanity tests for a script; a "paranoid postdoc" review sub-agent; or a preprint-scan digest. Run it twice and show it holds up.</p><span class="sample">sample: the planted-bug QC script</span></div>
+</div>
+</section>
+
+<section>
+<h2>Cross-cutting logistics</h2>
+<ul class="plain">
+  <li><b>TA assignment (4 TAs):</b> 2 rove Track A; 1 covers Track B pods 1–2; 1 covers pods 3–4. With 3 TAs: 2 on A, 1 on B with Sean anchoring.</li>
+  <li><b>Joint break midway</b> so the rooms cross-pollinate; optional joint closing with one Track A share and one Track B demo — beginners see the ceiling, veterans remember the on-ramp.</li>
+  <li><b>Contingencies:</b> if Wi-Fi/API access dies, Track A pivots to projected live demo + prompt-writing on paper; Track B pods 1 and 4 work offline against the cloned repo (the bundled paper and all datasets are already local). If the split is lopsided, pull a TA from B to A and let Sean hold B alone.</li>
+  <li><b>Capture the exhaust:</b> everyone drops their best prompt or CLAUDE.md into the repo's <code>community/</code> folder — the workshop leaves the institute a starter kit, not just a memory.</li>
+  <li><b>Follow-up hook:</b> announce office hours 2–3 weeks later, hosted by the Vahedi lab TAs — adoption dies without a second touch.</li>
+</ul>
+</section>
+
+<footer>Drafted 2026-09-22 · Based on Sean Davis's Harvard/Bioconductor agentic AI workshop structure (talks.seandavis.net) · Updated: tracks simplified, all exercises ship with bundled samples</footer>
+</div>
+
+</body>
+</html>
