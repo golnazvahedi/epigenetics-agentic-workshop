@@ -1,44 +1,100 @@
-# Pod 1 — Teach the Agent Your Lab
+# Pod 1 — The Lab Protocol Book
 
 *Morning topic: skills & CLAUDE.md (context engineering)*
 
-**The idea:** an agent is generic until you give it your lab's context. The
-highest-leverage thing a lab can build is the context layer — because one
-person writes it once and everyone's agent gets smarter. This pod builds
-that layer for a real project and **measures the difference**.
+**The idea:** every wet lab has a protocol book — the antibody dilutions,
+the sort gates, the fixation times — written once, followed by everyone, so
+a new student doesn't reinvent (or corrupt) the protocol. **A skill is the
+computational version of a protocol.** It's a named instruction file your
+agent loads when the task matches: "this is how *our lab* does a first-pass
+differential analysis." Written once by one person; from then on, everyone
+in the lab types one line and gets the lab-standard result.
 
-## Deliverable
+This pod builds the protocol book in two acts — first for the lab, then for
+the individual — using the real datasets in
+[`../track-a/data/`](../track-a/data/).
 
-A repo containing a `CLAUDE.md` (or equivalent agent-context file) plus one
-reusable skill, and a with-vs-without comparison you can show in the demo.
+## Act 1 — the lab-level skill (one protocol, everyone benefits)
 
-## Steps
+**First, watch the failure.** In a fresh session, everyone in the pod asks:
 
-1. **Pick a repo.** Best: someone in the pod's real analysis repo (public or
-   safely shareable). Fallback: this repo — pretend `track-a/data/` is your
-   lab's standard output format.
-2. **Write the context file.** Capture what a new student would need to be
-   told: what the project is, where data lives, naming conventions, genome
-   build, which scripts are canonical vs. abandoned, coding style, what
-   "done" means (e.g., "every figure script writes to `figures/` and is
-   re-runnable from scratch").
-3. **Build one skill.** A reusable, named procedure the agent can execute on
-   demand. Good candidates:
-   - "Generate our standard QC report from a differential peaks file"
-     (spec: the checks to run, the plots to make, the report format).
-   - "Set up a new analysis subfolder the way our lab does it."
-4. **Measure it.** Run the same realistic task in a fresh session *with* and
-   *without* the context layer. Save both transcripts. Where did the
-   context change the outcome — fewer wrong guesses? right conventions?
-   fewer questions back at you?
+> Analyze track-a/data/differential_genes.tsv and give me a first-pass
+> report.
+
+Compare screens. You'll get N different reports: different thresholds,
+different plots, and — with this file — at least one silent error, because
+nothing tells the agent that a *negative* fold change means higher in the
+knockout, or that `padj` is NA for 85% of genes. Generic agent, generic
+guesses. Save the worst one for the demo.
+
+**Now write the protocol.** As a pod, build one skill — call it
+`deseq2-first-pass` — that encodes how your (fictional or real) lab does
+this, e.g.:
+
+- **Verify before plotting:** confirm the fold-change direction against the
+  raw counts for 3 top genes; report which group is the reference. Never
+  assume.
+- **Handle the traps:** state how many genes have `padj = NA` and why;
+  never silently drop them with a `padj < 0.05` filter.
+- **Lab conventions:** padj < 0.05 and |log2FC| > 1; colorblind-safe
+  palette; PCA + volcano + top-25 table; protein-coding genes only in
+  heatmaps; mouse = mm10 unless stated.
+- **Standard output:** everything into `results/YYYY-MM-DD_<dataset>/`,
+  plus a draft methods paragraph with `[PLACEHOLDER]` for anything the
+  data can't prove.
+
+Install it (each tool has its own mechanism — in Claude Code, a folder
+under `.claude/skills/`), open fresh sessions, and ask **the same one-line
+question again.** Now every screen in the pod shows the *same* lab-standard
+report, direction verified, NA genes accounted for. That's the moment:
+one person wrote the protocol once, and the whole lab's floor just rose.
+
+## Act 2 — the member-level layer (same protocol, my project)
+
+Protocols are shared; projects are personal. Each pod member now writes a
+small **personal** context on top — a `CLAUDE.md` or personal skill with
+their project's facts, invented or real:
+
+> *My project: CTCF-binding-site knockout in follicular B cells. Comparison
+> of interest: CTCFBSKO vs WT, WT is the reference. My genes of interest:
+> Jun, Myc, Irf4, Ccr7. I always want PDFs, and figures sized for a
+> two-column paper.*
+
+(Someone else in the pod plays a different "member": the H3K27ac peaks
+file is their project, TCF-1 KO vs EV, interested in T cell factors.)
+
+Everyone asks the identical one-liner — *"run our first-pass analysis on my
+data"* — and each member's agent now produces a **different, correct,
+project-specific report in the same lab style**: right file, right
+reference group, their genes highlighted, their format preferences. Lab
+protocol + personal layer, composing.
 
 ## Demo
 
-Show the task running with the context layer, then the ugliest moment from
-the without-context transcript.
+Three screens: (1) the ugliest no-skill report from Act 1 — ideally one
+that got the fold-change direction wrong; (2) the same prompt with the lab
+skill — identical, correct output on every laptop; (3) two members, same
+one-line prompt, two different project-correct reports. Close by showing
+the skill file itself: it's just a page of English. That's the whole trick.
+
+## More protocols worth writing back home (steal these)
+
+- **Genome-build guardrail:** "any coordinate operation must state the
+  build; if mixing files, prove they match or stop" — the mm10/mm39 and
+  hg19/hg38 disaster preventer.
+- **Peak annotation, our way:** nearest-TSS rules, distance cutoffs, which
+  annotation source, how to report ambiguous assignments.
+- **GEO submission checklist:** validate an md5-summed, metadata-complete
+  submission folder from a samples table.
+- **Lab figure style:** fonts, palette, panel sizing — so every draft
+  figure is journal-ready.
+- **New-student onboarding:** "set up an analysis folder our way" — the
+  protocol that teaches the protocol.
 
 ## Where agents go confidently wrong here
 
-Context files rot. Ask: what happens in 6 months when the conventions
-change? Discuss who owns the file — treat it like a lab protocol, with an
-owner and a review date.
+A skill is followed only as well as it's written — vague lines ("QC the
+data appropriately") get vague obedience, and an over-long skill gets
+selectively ignored. And protocols rot: who owns `deseq2-first-pass` when
+the lab switches to mm39? Treat skills like bench protocols — an owner, a
+version, a review date.
