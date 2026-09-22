@@ -35,7 +35,7 @@ bullet notes) works too.
 
 **Verify:** read the methods draft line by line. Anything it asserted that
 you didn't tell it and it couldn't have observed? (Common ones here: naming
-a peak caller, claiming ATAC-seq instead of ChIP-seq, stating the reference
+a peak caller, mislabeling the H3K27ac ChIP-seq as a different assay, stating the reference
 group.) That's the failure mode to develop a reflex for — in writing tasks
 the agent's errors *sound* the most confident.
 
