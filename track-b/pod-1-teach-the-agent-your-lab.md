@@ -77,13 +77,21 @@ definitions your own lab would put in this file?*
 
 ## Stretch goal — from lab file to personal layer
 
-Promote the promoter/enhancer classification into a reusable **skill**
-("annotate a peak table the lab's way") so it can be invoked on any future
-peak file, not just this one. Then let each pod member add a personal
-layer on top of the lab file — *their* project, *their* comparison of
-interest, *their* figure preferences — and confirm the same one-line
-question now also respects the personal context. Lab conventions + member
-context, composing.
+Promote the promoter/enhancer classification into a reusable **skill** so
+it can be invoked on any future peak file, not just this one. Suggested
+prompt:
+
+> Turn the promoter/enhancer classification you just ran into a reusable
+> skill called "annotate-peaks": it should work on any table with
+> chromosome/start/end columns, follow the definitions in our CLAUDE.md,
+> and report promoter/enhancer percentages with the counts behind them.
+> Show me the skill file, then prove it works by running it on
+> track-a/data/differential_peaks.csv again.
+
+Then let each pod member add a personal layer on top of the lab file —
+*their* project, *their* comparison of interest, *their* figure
+preferences — and confirm the same one-line question now also respects the
+personal context. Lab conventions + member context, composing.
 
 ## Where agents go confidently wrong here
 

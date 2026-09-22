@@ -38,13 +38,30 @@ choosing.
 
 ## Steps
 
-1. **Brief the agent like a collaborator:** give it the accession, the
-   figure panel (describe it or paste the image), and the constraints
-   above. Ask for a plan before it starts.
-2. **Let it run — but keep the checkpoint habit:** after download, after
-   loading, after the stats, ask it to show intermediate numbers (how many
-   samples? how many peaks survived filtering?) and compare against the
-   paper's reported numbers before plotting.
+1. **Brief the agent like a collaborator** — give it the accession, the
+   figure panel (describe it or paste the image), and the constraints, and
+   demand a plan first. Suggested prompt:
+
+   > I want to reproduce the global sample-clustering figure from Calderon
+   > et al. 2019, "Landscape of stimulation-responsive chromatin across
+   > diverse human immune cells" (Nature Genetics, GEO GSE118189). The
+   > processed counts are in GSE118189_ATAC_counts.txt.gz in this folder —
+   > use only that file, no raw data. Before writing any code, give me a
+   > plan: how you'll load the matrix, normalize, select variable peaks,
+   > project the samples (PCA or similar), and parse cell type and
+   > stimulation state out of the sample names for coloring. Wait for my
+   > OK, then execute step by step, and after each step show me the
+   > numbers I should check against the paper — how many samples, how many
+   > peaks, how many survived filtering — before you draw anything.
+
+2. **Let it run — but keep the checkpoint habit:** at each step, compare
+   the intermediate numbers it reports against the paper's before letting
+   it plot. When your figure exists, ask:
+
+   > Compare your figure against the published panel point by point: same
+   > number of samples, same groupings, same axes? List every difference
+   > and what would explain it.
+
 3. **Split with sub-agents** where natural: one inventories the GEO files
    and parses sample metadata from the names while another drafts the
    analysis against the expected matrix shape.
