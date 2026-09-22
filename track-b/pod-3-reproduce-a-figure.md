@@ -8,33 +8,48 @@ to end (fetch → process → analyze → plot) until your figure matches theirs
 Where it diverges is where the discussion gets good: genome builds, package
 versions, silent parameter defaults, undocumented filtering.
 
-## Deliverable
+## Pre-vetted target (use this unless your pod has a better idea)
 
-Your figure next to the published one, plus an honest list of every place
-you had to make a decision the paper didn't specify.
+> Calderon D, Nguyen MLT, Mezger A, et al. *Landscape of
+> stimulation-responsive chromatin across diverse human immune cells.*
+> Nature Genetics (2019). DOI:
+> [10.1038/s41588-019-0505-9](https://doi.org/10.1038/s41588-019-0505-9) ·
+> open access at [PMC6858557](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6858557/)
+
+- **Data:** GEO [GSE118189](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE118189)
+  — human immune-cell ATAC-seq, 175 samples, 25 cell types, resting vs
+  stimulated.
+- **Processed file (verified, ~111 MB, no raw FASTQs needed):**
+
+  ```bash
+  curl -L -O https://ftp.ncbi.nlm.nih.gov/geo/series/GSE118nnn/GSE118189/suppl/GSE118189_ATAC_counts.txt.gz
+  ```
+
+- **Target figure:** the paper's global sample-level projection — samples
+  clustering by cell type and lineage from the ATAC counts (Fig. 1 of the
+  paper). Computable from the counts file alone: normalize, pick variable
+  peaks, project (PCA/UMAP), color by cell type parsed from the sample
+  names.
+
+Pick your own target instead? Keep these constraints: open access; GEO has
+**processed** files; the figure is computable from one file (PCA, volcano,
+heatmap) — not a genome-browser screenshot. Spend at most 15 minutes
+choosing.
 
 ## Steps
 
-1. **Pick the target.** Constraints that keep this achievable in ~3 hours:
-   - Open access paper, data on GEO **with processed files** (counts
-     matrices, peak calls) — do *not* start from raw FASTQs today.
-   - A figure computable from one processed file: a PCA, a volcano, a
-     heatmap, a TSS enrichment profile. Not a genome-browser screenshot.
-
-   TAs will have 1–2 pre-vetted picks ready (paper + accession + which
-   figure panel). If choosing your own, spend ≤15 minutes deciding.
-2. **Brief the agent like a collaborator:** give it the accession, the
-   figure panel (describe it or paste the image), and the constraint list
+1. **Brief the agent like a collaborator:** give it the accession, the
+   figure panel (describe it or paste the image), and the constraints
    above. Ask for a plan before it starts.
-3. **Let it run — but keep the checkpoint habit:** after download, after
+2. **Let it run — but keep the checkpoint habit:** after download, after
    loading, after the stats, ask it to show intermediate numbers (how many
-   samples? how many features survived filtering?) and compare against the
+   samples? how many peaks survived filtering?) and compare against the
    paper's reported numbers before plotting.
-4. **Split with sub-agents** where natural: one fetches and inventories the
-   GEO supplementary files while another drafts the analysis against the
-   expected file shape.
+3. **Split with sub-agents** where natural: one inventories the GEO files
+   and parses sample metadata from the names while another drafts the
+   analysis against the expected matrix shape.
 
-## Demo (4 min)
+## Demo
 
 Side-by-side figures, then your decision list: "the paper never said ___,
 we guessed ___, and it changed the figure like this."
@@ -43,4 +58,4 @@ we guessed ___, and it changed the figure like this."
 
 It will produce *a* beautiful figure long before it produces *the* figure —
 and will describe near-matches as matches. Quantify the comparison where you
-can (same n? same axis ranges? same top genes?) instead of eyeballing.
+can (same n? same axis ranges? same groupings?) instead of eyeballing.

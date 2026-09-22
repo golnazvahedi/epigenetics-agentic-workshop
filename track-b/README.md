@@ -5,34 +5,33 @@ something genuinely *agentic* working: a context layer for their own repo, an
 MCP connection, a sub-agent pattern, or an end-to-end analysis reproduction.
 Each challenge maps to a topic from the morning lectures.
 
-## How the afternoon runs
+## How it works
 
-| Time | What happens |
-|---|---|
-| 0:00–0:15 | **Pod formation** — pick a challenge below, form pods of 3–5. Each pod writes one sentence: *"By the demo, we will show ___."* |
-| 0:15–1:45 | **Sprint 1.** TAs rotate. One 2-minute whole-room interruption mid-sprint: a TA shows a power move worth stealing. |
-| 1:45–2:00 | Break (joint with Track A). |
-| 2:00–2:40 | **Sprint 2 / polish.** House rule: *a small thing that runs beats a big thing that almost runs.* |
-| 2:40–3:00 | **Demos** — 4 minutes per pod: what you built, one thing the agent nailed, one thing it got confidently wrong. |
+1. **Pick a challenge and form a pod** (3–5 people). Each pod writes one
+   sentence before starting: *"By the demo, we will show ___."*
+2. **Build.** TAs rotate between pods. At some point a TA will interrupt the
+   room for two minutes to show a power move worth stealing (plan mode
+   before a big change; spawning parallel sub-agents).
+3. **Demo.** Every pod shows: what they built, one thing the agent nailed,
+   and one thing it got confidently wrong. House rule: *a small thing that
+   runs beats a big thing that almost runs.*
 
 ## The challenges
 
-| Pod | Challenge | Morning topic |
-|---|---|---|
-| 1 | [Teach the agent your lab](pod-1-teach-the-agent-your-lab.md) | Skills & CLAUDE.md |
-| 2 | [Connect to the outside world](pod-2-mcp-connections.md) | MCP |
-| 3 | [Reproduce a published figure](pod-3-reproduce-a-figure.md) | Agents on real analysis |
-| 4 | [Automate something recurring](pod-4-automation.md) | Sub-agents & automation |
+Every challenge has a ready-to-use sample, so no pod stalls hunting for
+materials — bring-your-own project is encouraged, the sample is the floor.
 
-Bring-your-own project is encouraged for pods 1, 2, and 4; the simulated
-data in [`../track-a/data/`](../track-a/data/) is the fallback so nobody
-stalls.
+| Pod | Challenge | Sample included | Morning topic |
+|---|---|---|---|
+| 1 | [Teach the agent your lab](pod-1-teach-the-agent-your-lab.md) | This repo + `track-a/data/` as the "lab's" standard outputs | Skills & CLAUDE.md |
+| 2 | [Connect to the outside world](pod-2-mcp-connections.md) | Keyless REST endpoints (Ensembl, NCBI E-utilities) + a benchmark query | MCP |
+| 3 | [Reproduce a published figure](pod-3-reproduce-a-figure.md) | Pre-vetted target: Calderon et al. 2019, GEO GSE118189 processed counts | Agents on real analysis |
+| 4 | [Automate something recurring](pod-4-automation.md) | `track-a/data/make_qc_report.py` + a preprint-scan spec | Sub-agents & automation |
 
 ## Ground rules
 
 - Same privacy rule as everywhere: no PHI, no unpublished data, no grant
-  drafts. Public repos and simulated data only.
-- Scope ruthlessly. The demo is in ~3 hours including a break. Cut features,
-  not the demo.
-- Keep a "confidently wrong" log as you go — the best 30 seconds of every
-  demo is the failure you caught.
+  drafts. Public repos and simulated/public data only.
+- Scope ruthlessly — cut features, not the demo.
+- Keep a "confidently wrong" log as you go; the best moment of every demo
+  is the failure you caught.

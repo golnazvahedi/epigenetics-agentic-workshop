@@ -1,22 +1,15 @@
-# Track A — Zero to Agent
+# Track A — Getting Started
 
-For attendees who have **never used an agentic AI tool**. By the end of the
-afternoon you will have personally directed an agent through real tasks —
-reading a paper, cleaning a table, plotting data, drafting text, fixing
-code — and picked up the verify-before-trust habit.
+For attendees who are **new to agentic AI tools**. The format is simple:
+one guided exercise everyone does together, then exercise cards you work
+through at your own pace, in any order. TAs are roving the whole time —
+wave one over whenever you're stuck. If your setup dies, pair with a
+neighbor; pairing is a feature.
 
-## How the afternoon runs
+Every exercise comes with its own sample data in [`data/`](data/) — you
+never need your own.
 
-| Time | What happens |
-|---|---|
-| 0:00–0:15 | **Launch check** — open your agent, run one throwaway prompt. TAs triage; if unfixable in 5 min, pair with a neighbor. |
-| 0:15–0:45 | **Guided exercise** (below) — everyone does the same thing, projected at the front. |
-| 0:45–1:45 | **Exercise cards** — pick any card, any order, at your own pace. TAs are roving. |
-| 1:45–2:00 | Break (joint with Track B). |
-| 2:00–2:40 | **Bring your own drudgery** — pick one real, *safe* task from your own work and try it. Ask a TA to help you scope it small. |
-| 2:40–3:00 | **Share-out** — volunteers show one thing that worked or failed instructively. Failures are gold. |
-
-## The guided exercise
+## The guided exercise (done together first)
 
 Open your agent in this repo's folder and ask, in your own words:
 
@@ -36,15 +29,20 @@ problems, fixes them, and produces figures. Three things to notice:
    exist, duplicated rows). Did the agent catch them? Ask it:
    *"How do I know this plot is right? Show me your checks."*
 
-## The exercise cards
+## The exercise cards (any order, your pace)
 
-| Card | Exercise | You'll learn |
-|---|---|---|
-| 1 | [Paper wrangler](card-1-paper-wrangler.md) | Documents as input; structured extraction |
-| 2 | [Sample-sheet rescue](card-2-sample-sheet-rescue.md) | Cleaning messy data; the change-log habit |
-| 3 | [Plot without coding](card-3-plot-without-coding.md) | Real analysis by conversation |
-| 4 | [Writing assistant](card-4-writing-assistant.md) | Agents on scientific text |
-| 5 | [Debug my script](card-5-debug-my-script.md) | Agents reading and fixing code |
+| Card | Exercise | Sample included | You'll learn |
+|---|---|---|---|
+| 1 | [Paper wrangler](card-1-paper-wrangler.md) | Stripenn paper (open access) | Documents as input; structured extraction |
+| 2 | [Sample-sheet rescue](card-2-sample-sheet-rescue.md) | `data/sample_sheet_messy.csv` | Cleaning messy data; the change-log habit |
+| 3 | [Plot without coding](card-3-plot-without-coding.md) | `data/counts_matrix.csv` | Real analysis by conversation |
+| 4 | [Writing assistant](card-4-writing-assistant.md) | `data/differential_peaks.csv` + provided bullets | Agents on scientific text |
+| 5 | [Debug my script](card-5-debug-my-script.md) | `data/make_qc_report.py` (4 planted bugs) | Agents reading and fixing code |
+
+When you've done a few cards, try the same pattern on one real, *safe* task
+from your own work — a public dataset, a talk outline, a figure you never
+liked. Ask a TA to help you scope it small; the classic beginner mistake is
+a task too big.
 
 ## Habits to take home
 

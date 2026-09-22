@@ -35,7 +35,7 @@ Run it for two different topics or two date windows to show it generalizes.
 Bonus: schedule it (cron, scheduled agent runs, or your tool's native
 scheduler).
 
-## Demo (4 min)
+## Demo
 
 Run it. Then run it again on different input. Show the catch (Option A/B)
 or the digest (Option C), and what it got confidently wrong.

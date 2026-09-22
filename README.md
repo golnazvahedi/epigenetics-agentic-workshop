@@ -6,8 +6,12 @@ MCP, and sub-agents). The afternoon splits into two tracks — pick yours:
 
 | Track | Who it's for | Start here |
 |---|---|---|
-| **[Track A — Zero to Agent](track-a/)** | You've never let an AI agent run code or edit files for you | [track-a/README.md](track-a/README.md) |
+| **[Track A — Getting Started](track-a/)** | You're new to agentic AI: one guided exercise, then self-paced exercise cards | [track-a/README.md](track-a/README.md) |
 | **[Track B — Level Up](track-b/)** | You've used a coding agent and want skills, MCP, sub-agents, and real analysis | [track-b/README.md](track-b/README.md) |
+
+Every exercise and challenge ships with its own sample materials — a
+simulated dataset, a bundled open-access paper, or a verified public data
+target — so nobody needs their own data to participate.
 
 ## Setup (do this BEFORE the workshop)
 

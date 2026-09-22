@@ -36,7 +36,7 @@ tools around a REST API that doesn't need a key — e.g.:
 Wire it into your agent config and run the benchmark. Yes, the agent can
 write the server *and* then use it — that loop is the demo.
 
-## Demo (4 min)
+## Demo
 
 The benchmark query answered live, plus your hand-check: was the table
 complete and correct against the source website?

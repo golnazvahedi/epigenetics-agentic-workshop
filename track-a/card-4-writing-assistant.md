@@ -3,9 +3,12 @@
 **Task:** use an agent on scientific text — with the source-of-truth caveat
 front and center.
 
-**Data:** the analysis you (or the guided exercise) just ran on
-[`data/differential_peaks.csv`](data/differential_peaks.csv), or any safe
-text of your own (a talk outline, a course description, bullet notes).
+**Sample (included in this repo):**
+[`data/differential_peaks.csv`](data/differential_peaks.csv). If you haven't
+done the guided exercise yet, start with: *"Analyze
+track-a/data/differential_peaks.csv: count the significant peaks at
+FDR < 0.05 and make a volcano plot"* — that gives you an analysis to write
+about. Any safe text of your own (a talk outline, bullet notes) works too.
 
 **Do this:**
 

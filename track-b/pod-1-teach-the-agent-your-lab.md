@@ -32,7 +32,7 @@ reusable skill, and a with-vs-without comparison you can show in the demo.
    context change the outcome — fewer wrong guesses? right conventions?
    fewer questions back at you?
 
-## Demo (4 min)
+## Demo
 
 Show the task running with the context layer, then the ugliest moment from
 the without-context transcript.
