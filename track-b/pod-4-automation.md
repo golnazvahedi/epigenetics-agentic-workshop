@@ -15,8 +15,10 @@ plus the moment it caught something.
 ## Pick one
 
 **Option A — Tests for a script that has none.** Take a real analysis script
-from someone's repo (fallback: the fixed version of
-[`track-a/data/make_qc_report.py`](../track-a/data/make_qc_report.py)). Ask
+from someone's repo (fallback:
+[`track-a/data/make_qc_report.py`](../track-a/data/make_qc_report.py) — it
+ships deliberately broken with four planted bugs, so have the agent fix it
+first and explain each bug; that warm-up is part of the exercise). Ask
 the agent to write sanity tests — the assertions a careful postdoc checks by
 eye: no negative peak widths, FDR in [0,1], sample count matches the sheet,
 figures actually get written. Then have it *break the script on purpose* and

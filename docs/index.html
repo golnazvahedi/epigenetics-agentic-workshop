@@ -117,7 +117,7 @@ Every exercise and challenge ships with its own sample — two <b>real Vahedi la
   <li><b>Real B-cell RNA-seq</b> (CTCF-binding-site knockout vs wild type, mouse spleen): raw counts matrix + the lab's own DESeq2 table, with a genuine trap — a <em>negative</em> fold change means higher in the knockout, and <code>padj</code> is NA for most genes (independent filtering).</li>
   <li>A deliberately messy simulated sample sheet (Card 2).</li>
   <li>The open-access <b>scBaseCount</b> paper (Youngblut et al., <em>Cell</em> 2026, CC BY) for the paper-wrangling card — fitting, since the resource it describes was itself built by an AI agent.</li>
-  <li>A QC script with <b>four planted bugs</b> (one crash, three silent logic errors) — verified to fail on cue.</li>
+  <li>A QC script with <b>four planted bugs</b> (one crash, three silent logic errors) — the fallback material for Track B's automation pod.</li>
   <li>A pre-vetted figure-reproduction target: Calderon et al., <em>Nat Genet</em> 2019, GEO GSE118189, with a verified 111&nbsp;MB processed counts file (no raw FASTQs needed).</li>
   <li>A <code>community/</code> folder where attendees PR their best prompts and CLAUDE.md files afterward.</li>
 </ul>
@@ -125,7 +125,7 @@ Every exercise and challenge ships with its own sample — two <b>real Vahedi la
 
 <section class="track-a">
 <div class="trackhead"><span class="pill">Track A</span><h2>"Getting Started" — new to agentic AI</h2></div>
-<div class="goal"><strong>Goal:</strong> every attendee personally directs an agent through real tasks — a paper, a messy table, a plot, a draft, broken code — and leaves with the verify-before-trust habit.</div>
+<div class="goal"><strong>Goal:</strong> every attendee personally directs an agent through real tasks — a paper, a messy table, a plot, a draft — and leaves with the verify-before-trust habit.</div>
 <p><b>Staffing:</b> 2 TAs embedded and roving — ratio matters more here than in Track B. Two parts, no clock:</p>
 
 <ul class="flow">
@@ -135,13 +135,12 @@ Every exercise and challenge ships with its own sample — two <b>real Vahedi la
   <li><div><b>Exercise cards — self-paced, any order.</b><p>TAs rove. Each card: one task, one bundled sample, one "success looks like" line, one stretch goal. Once someone has done a few, TAs nudge them to try the pattern on one real, <em>safe</em> task from their own work — scoped small.</p></div></li>
 </ul>
 
-<h3>The five exercise cards</h3>
+<h3>The four exercise cards</h3>
 <div class="cards">
   <div class="card"><span class="tag">Card 1</span><b>Paper wrangler</b><p>Audience-specific summary + structured extraction, then spot-check for invented details.</p><span class="sample">sample: scBaseCount PDF (Cell 2026, CC BY, bundled)</span></div>
   <div class="card"><span class="tag">Card 2</span><b>Sample-sheet rescue</b><p>"Make this tidy, tell me what you changed." Everyday drudgery is the killer app; builds the change-log habit.</p><span class="sample">sample: messy sample sheet (simulated)</span></div>
   <div class="card"><span class="tag">Card 3</span><b>Plot without coding</b><p>PCA and heatmap by conversation on real B-cell RNA-seq; stretch goal compares against the lab's own DESeq2 table and its fold-change-direction trap.</p><span class="sample">sample: real counts matrix + DESeq2 table</span></div>
   <div class="card"><span class="tag">Card 4</span><b>Writing assistant</b><p>Methods paragraph with [PLACEHOLDER] discipline; figure legend from bullets. The file doesn't state the reference group — a truthful draft must leave it blank.</p><span class="sample">sample: real H3K27ac peaks table + provided bullets</span></div>
-  <div class="card"><span class="tag">Card 5</span><b>Debug my script</b><p>One crash + three silent bugs, all to be found, explained, and sanity-checked.</p><span class="sample">sample: broken QC script</span></div>
 </div>
 <p style="margin-top:14px">Close with a short share-out — volunteers show one thing that worked or failed instructively — and the take-home habits: start small; give files, not descriptions of files; always ask for verification; never paste what you can't afford to leak; the agent is a tireless junior colleague, not an oracle.</p>
 </section>

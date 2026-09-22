@@ -11,7 +11,7 @@ simulated. The scripts that produced every file are in [`tools/`](../../tools/).
 | `differential_genes.tsv` | Real DESeq2 differential **RNA-seq** genes, with raw counts | `tools/prepare_real_data.py` |
 | `counts_matrix.csv` | The raw counts from `differential_genes.tsv`, nothing else | `tools/prepare_real_data.py` |
 | `sample_sheet_messy.csv` | Simulated messy RNA-seq submission sheet (Card 2) | `tools/generate_data.py` |
-| `make_qc_report.py` | Deliberately broken QC script (Card 5) | hand-written |
+| `make_qc_report.py` | Deliberately broken QC script (Track B, Pod 4) | hand-written |
 | `scbasecount_paper.pdf` | Open-access paper, Youngblut et al. Cell 2026, CC BY 4.0 (Card 1) | — |
 
 ## `differential_peaks.csv` — H3K27ac, TCF-1 knockout vs control

@@ -48,7 +48,7 @@ get you running before the afternoon starts.
 ## What's here
 
 ```
-track-a/            Beginner track: 5 exercise cards + guided exercise
+track-a/            Beginner track: guided exercise + 4 exercise cards
 track-a/data/       Real DESeq2 tables (H3K27ac peaks, B-cell RNA-seq) + one simulated sample sheet
 track-b/            Experienced track: 4 pod challenge briefs
 tools/              Scripts that built the datasets (prepare_real_data.py, generate_data.py)
