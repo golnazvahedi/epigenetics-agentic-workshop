@@ -1,0 +1,16 @@
+Vahedi Lab -- RNA-seq submission,,,,,
+Prepared by J.D.,,,last edited Fall,,
+,,,,,
+sample,Condition ,harvest date,Sorted Population,replicate,notes
+TCONV_1,conventional,03/02/2026,CD4+ CD25-,1,
+tconv-2,Conventional,2026-03-02,CD4+CD25-,2,
+Tconv_rep3,conv,3/2/26,CD4+ CD25neg,3,low yield
+TCONV_4,conventional,03/09/2026,CD4+ CD25-,4,
+tconv 5,Conventional,March 9 2026,CD4+CD25-,5,
+Tconv_6,conv.,3/9/2026,CD4+ CD25-,6,repeat of #5??
+TREG_1,regulatory,03/02/2026,CD4+ CD25hi,1,
+treg-2,Regulatory,2026-03-02,CD4+CD25hi,2,
+Treg_rep3,reg,3/2/26,CD4+ CD25 high,3,
+TREG_4,regulatory,03/09/2026,CD4+ CD25hi,4,  RIN 6.8
+treg 5,Regulatory,March 9 2026,CD4+CD25hi,5,
+TREG_1,regulatory,03/02/2026,CD4+ CD25hi,1,duplicate row?
