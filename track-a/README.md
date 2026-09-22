@@ -39,7 +39,7 @@ problems, fixes them, and produces figures. Three things to notice:
 
 | Card | Exercise | Sample included | You'll learn |
 |---|---|---|---|
-| 1 | [Paper wrangler](card-1-paper-wrangler.md) | Stripenn paper (open access) | Documents as input; structured extraction |
+| 1 | [Paper wrangler](card-1-paper-wrangler.md) | scBaseCount paper (open access) | Documents as input; structured extraction |
 | 2 | [Sample-sheet rescue](card-2-sample-sheet-rescue.md) | `data/sample_sheet_messy.csv` | Cleaning messy data; the change-log habit |
 | 3 | [Plot without coding](card-3-plot-without-coding.md) | `data/counts_matrix.csv` + `data/differential_genes.tsv` | Real analysis by conversation |
 | 4 | [Writing assistant](card-4-writing-assistant.md) | `data/differential_peaks.csv` + provided bullets | Agents on scientific text |

@@ -3,13 +3,16 @@
 **Task:** turn a paper into things you can actually use.
 
 **Sample (included in this repo):**
-[`data/stripenn_paper.pdf`](data/stripenn_paper.pdf) — the Vahedi lab's
-Stripenn paper, redistributed here under its CC BY 4.0 license:
+[`data/scbasecount_paper.pdf`](data/scbasecount_paper.pdf) — the Arc
+Institute's scBaseCount paper, redistributed here under its CC BY 4.0
+license. It is a fitting choice for an agentic-AI workshop: the resource it
+describes was itself built by an AI agent that reads the Sequence Read
+Archive.
 
-> Yoon S, Chandra A, Vahedi G. *Stripenn detects architectural stripes from
-> chromatin conformation data using computer vision.* Nature Communications
-> (2022). DOI: [10.1038/s41467-022-29258-9](https://doi.org/10.1038/s41467-022-29258-9) ·
-> [PMC8948182](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8948182/)
+> Youngblut ND, Carpenter C, Nayebnazar A, et al. *scBaseCount: An AI
+> agent-curated, standardized, auto-updated single-cell data repository.*
+> Cell 189, 5932–5944 (2026). DOI:
+> [10.1016/j.cell.2026.08.025](https://doi.org/10.1016/j.cell.2026.08.025)
 
 Prefer a paper from your own field? Any open-access PDF works — the steps
 are identical.
@@ -23,6 +26,8 @@ are identical.
    > Extract every software tool, dataset, and public data accession
    > mentioned in this paper into a CSV with columns: item, type
    > (tool/dataset/accession), and what it was used for.
+   This paper is dense with exactly these: the SRAgent and scRecounter
+   tools, STARsolo, Google Cloud buckets, SRA accessions, model names.
    (For a wet-lab paper, extract antibodies/reagents/kits with vendor and
    catalog number instead.)
 3. **Verify:** spot-check three rows of the CSV against the actual PDF.
@@ -35,4 +40,8 @@ CSV you've spot-checked.
 
 **Stretch goal:** ask the agent to compare the paper's stated method against
 its figures — "which figure demonstrates each claim in the abstract?" — and
-watch where it reaches.
+watch where it reaches. Then a harder one: *"The paper says over 502
+million cells. What fraction of the target SRA datasets had actually been
+reprocessed at the time of writing, and where does the paper say so?"* The
+repository was still being built when the paper went to press, and a
+careless summary quotes only the headline number.
